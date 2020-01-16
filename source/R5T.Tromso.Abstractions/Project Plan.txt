@@ -1,4 +1,15 @@
 R5T.Tromso.Abstractions - An abstractions library for the Tromso project.
 
-Goals
+The IServiceBuilder interface type defines methods allowing actions to be added to configure:
 
+1. IConfigurationBuilder
+2. IServicesCollection
+3. IServiceProvider
+
+The IBuildableService has properties:
+
+1. IConfigurationBuilder
+2. IServicesCollection
+3. IServiceProvider
+
+Thus an IServiceBuilder can build an IBuildableService by applying all its actions to the properties of the IBuildableService.
