@@ -18,6 +18,6 @@ namespace R5T.Tromso
         /// <summary>
         /// Builds a service by applying all actions.
         /// </summary>
-        void Build(IBuildableService buildableService, IServiceProvider configurationServiceProvider);
+        void Build(IServiceProvider configurationServiceProvider);
     }
 }
