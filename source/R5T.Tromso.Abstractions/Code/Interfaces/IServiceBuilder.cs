@@ -20,4 +20,9 @@ namespace R5T.Tromso
         /// </summary>
         void Build(IServiceProvider configurationServiceProvider);
     }
+
+    public interface IServiceBuilder<TService> : IServiceBuilder
+    {
+        TService GetResult();
+    }
 }
