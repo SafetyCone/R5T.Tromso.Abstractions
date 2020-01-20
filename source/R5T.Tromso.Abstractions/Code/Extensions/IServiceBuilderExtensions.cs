@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace R5T.Tromso
@@ -13,6 +14,13 @@ namespace R5T.Tromso
         public static void AddConfigureConfiguration(this IServiceBuilder serviceBuilder, Action<IConfigurationBuilder> configureConfigurationAction)
         {
             serviceBuilder.AddConfigureConfiguration((configurationBuilder, _) => configureConfigurationAction(configurationBuilder));
+        }
+
+        public static IServiceBuilder<TService> ConfigureServices<TService>(this IServiceBuilder<TService> serviceBuilder, Action<IServiceCollection> configureServicesAction)
+        {
+            serviceBuilder.AddConfigureServices(configureServicesAction);
+
+            return serviceBuilder;
         }
     }
 }
